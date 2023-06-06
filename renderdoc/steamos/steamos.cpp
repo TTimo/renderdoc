@@ -28,6 +28,7 @@
 #include "replay/replay_driver.h"
 #include <cpp-httplib/httplib.h>
 #include <nlohmann/json.hpp>
+using json = nlohmann::json;
 #include <map>
 
 struct SteamOSRemoteServer : public RemoteServer
@@ -97,10 +98,23 @@ struct SteamOSController : public IDeviceProtocolHandler
 
   void UpdateDB()
   {
+    devices.clear();
+    httplib::Client cl("http://127.0.0.1:32010");
+    httplib::Result res = cl.Get("/selected_devkit");
+    if(!res)
+    {
+      RDCLOG("Query SteamOS devkit tool failed: %s", to_string(res.error()).c_str());
+      return;
+    }
+    RDCLOG("DBG DBG %s", res->body.c_str());
+    json selected_kit = json::parse(res->body);
+    RDCLOG("DBG DBG %s", selected_kit["name"].dump().c_str());
+/*
     // load from JSON
     devices = {
         {"dev12345", {"RetailKit", 25000}}, {"dev8675309", {"GitMesaKit", 25100}},
     };
+    */
   }
 
   rdcstr GetProtocolName() override { return "steamos"; }
