@@ -145,6 +145,9 @@
     <Filter Include="SteamOS">
       <UniqueIdentifier>{8a4bf2d4-349e-4549-8457-1b1c1a31561d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rdparty\cpp-httplib">
+      <UniqueIdentifier>{8d7a7603-2312-4e17-afca-99dfe2bdaf37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="maths\camera.h">
@@ -569,6 +572,9 @@
     </ClInclude>
     <ClInclude Include="steamos\steamos.h">
       <Filter>SteamOS</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\cpp-httplib\httplib.h">
+      <Filter>3rdparty\cpp-httplib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
