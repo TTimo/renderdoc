@@ -26,7 +26,8 @@
 #include "core/core.h"
 #include "core/remote_server.h"
 #include "replay/replay_driver.h"
-#include "3rdparty/cpp-httplib/httplib.h"
+#include <cpp-httplib/httplib.h>
+#include <nlohmann/json.hpp>
 #include <map>
 
 struct SteamOSRemoteServer : public RemoteServer

@@ -148,6 +148,9 @@
     <Filter Include="3rdparty\cpp-httplib">
       <UniqueIdentifier>{8d7a7603-2312-4e17-afca-99dfe2bdaf37}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rdparty\json">
+      <UniqueIdentifier>{b2d1229d-09aa-46cf-8926-05b49c75e9de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="maths\camera.h">
@@ -575,6 +578,9 @@
     </ClInclude>
     <ClInclude Include="3rdparty\cpp-httplib\httplib.h">
       <Filter>3rdparty\cpp-httplib</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdparty\json\nlohmann\json.hpp">
+      <Filter>3rdparty\json</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

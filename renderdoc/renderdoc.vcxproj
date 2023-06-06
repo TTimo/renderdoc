@@ -135,6 +135,7 @@
     <ClInclude Include="3rdparty\interceptor-lib\lib\target.h" />
     <ClInclude Include="3rdparty\jpeg-compressor\jpgd.h" />
     <ClInclude Include="3rdparty\jpeg-compressor\jpge.h" />
+    <ClInclude Include="3rdparty\json\nlohmann\json.hpp" />
     <ClInclude Include="3rdparty\lz4\lz4.h" />
     <ClInclude Include="3rdparty\md5\md5.h" />
     <ClInclude Include="3rdparty\miniz\miniz.h" />
@@ -673,7 +674,12 @@
     <ClCompile Include="serialise\streamio.cpp" />
     <ClCompile Include="serialise\streamio_tests.cpp" />
     <ClCompile Include="serialise\zstdio.cpp" />
-    <ClCompile Include="steamos\steamos.cpp" />
+    <ClCompile Include="steamos\steamos.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">$(SolutionDir)renderdoc\;$(SolutionDir)renderdoc\3rdparty\;$(SolutionDir)renderdoc\3rdparty\json\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)renderdoc\;$(SolutionDir)renderdoc\3rdparty\;$(SolutionDir)renderdoc\3rdparty\json\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Development|x64'">$(SolutionDir)renderdoc\;$(SolutionDir)renderdoc\3rdparty\;$(SolutionDir)renderdoc\3rdparty\json\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)renderdoc\;$(SolutionDir)renderdoc\3rdparty\;$(SolutionDir)renderdoc\3rdparty\json\</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="strings\grisu2.cpp" />
     <ClCompile Include="strings\string_utils.cpp" />
     <ClCompile Include="strings\utf8printf.cpp" />
